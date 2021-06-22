@@ -18,6 +18,7 @@ body{
     width: 100%;
     position: absolute;
     top: calc( 50% - 25px);
+  
     
 }
 
@@ -34,21 +35,21 @@ body{
 }
 .N{
     transform: translate(50px);
+
 }
 .A{
     transform: translate(150px);
+    
 }
 .D{
     transform: translate(250px);
 }
 .logo{
-    transition: all 0.5s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
-.logo_independent{
-    opacity : 1;
 
-}
+
 
 .logo_dependent{
     /**animation: logoOn 1s 0.5s ease-in-out forwards;**/
@@ -64,9 +65,12 @@ body{
     animation: noTranslate 1.5s ease-in-out 0.5s forwards;
 
 }
+.logo_independent{
+    transition: all 0.8s ease;
+}
 
 .logoUp{
-    animation: logoUP 0.8s ease-in-out 0.3s forwards;
+    animation: logoUP 1s ease-in-out 0.3s forwards;
 }
 
 @keyframes noTranslate{

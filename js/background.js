@@ -1,11 +1,7 @@
 const canvas  =document.getElementById('canvas');
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 const offscreen = canvas.transferControlToOffscreen();
-
-
 
 let worker = new Worker('./js/worker.js');
 

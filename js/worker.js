@@ -7,6 +7,7 @@ onmessage = (e) =>{
     const ctx = canvas.getContext('2d');
 
    
+    let flag = 0;
     
     class BackGround {
 
@@ -16,11 +17,13 @@ onmessage = (e) =>{
             this.height = height;
             this.speed = 1;
             this.radius = 200;
-            this.degree = -180;
-            this.moveTrace = 570;
+            this.degree = -240;
+            this.mx = 0;
+            this.moveTrace = 750;
             this.triDeg = this.degree * Math.PI / 180;
             this.x = this.radius * Math.cos(this.triDeg);
             this.y = this.radius * Math.sin(this.triDeg);
+            
 
             this.animate();
 
@@ -37,10 +40,16 @@ onmessage = (e) =>{
         }
 
         update(){
-            this.degree += 0.25;
+            if(!flag){
+                this.mx += 0.01;
+                this.degree += 2 - this.mx;
+            }else{
+                this.degree += 0.25;
+            }
+            console.log(this.degree)
             this.triDeg = this.degree * Math.PI / 180;
             this.x = this.moveTrace * Math.cos(this.triDeg) + this.width/2;
-            this.y = this.moveTrace * Math.sin(this.triDeg) + this.height/2;
+            this.y = (this.moveTrace-250) * Math.sin(this.triDeg) + this.height/2;
         }
 
 
@@ -48,6 +57,9 @@ onmessage = (e) =>{
 
             ctx.clearColor = 'black';
             ctx.clearRect(0,0,this.width,this.height);
+            if(this.degree > -140){
+                flag = 1;
+            }
             this.draw();
             this.update();
             requestAnimationFrame(this.animate.bind(this));
