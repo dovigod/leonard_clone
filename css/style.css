@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+    height: 100vh;
+}
+
+
+.logo_svg{
+    width: 50%;
+}
+
+
+
+.logo{
+    transition: all 0.5s ease-in-out;
+}
+
+.logo_independent{
+    opacity : 1;
+
+}
+
+.logo_dependent{
+    animation: logoOn 1s 0.5s ease-in-out forwards;
+}
+
+
+@keyframes logoOn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
