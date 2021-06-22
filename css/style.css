@@ -1,15 +1,46 @@
 body{
-    background-color: black;
+  
     height: 100vh;
+    position: relative;
+    background-color: black;
 }
 
+#canvas{
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -20;
+    filter: blur(120px);
+}
 
 .logo_svg{
-    width: 50%;
+    width: 100%;
+    position: absolute;
+    top: calc( 50% - 25px);
+    
 }
 
+.L{
+    transform: translate(-250px);
+}
 
+.E{
+    transform: translate(-150px);
+}
 
+.O{
+    transform: translate(-50px);
+}
+.N{
+    transform: translate(50px);
+}
+.A{
+    transform: translate(150px);
+}
+.D{
+    transform: translate(250px);
+}
 .logo{
     transition: all 0.5s ease-in-out;
 }
@@ -20,15 +51,44 @@ body{
 }
 
 .logo_dependent{
-    animation: logoOn 1s 0.5s ease-in-out forwards;
+    /**animation: logoOn 1s 0.5s ease-in-out forwards;**/
+}
+
+.turnOn{
+    animation: logoOn 0.7s ease-in-out forwards;
 }
 
 
+.no_trans{
+
+    animation: noTranslate 1.5s ease-in-out 0.5s forwards;
+
+}
+
+.logoUp{
+    animation: logoUP 0.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes noTranslate{
+    100%{
+        transform: translate(0px);
+    }
+}
 @keyframes logoOn{
     0%{
         opacity: 0;
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes logoUP{
+    80%{
+        top: 10%;
+    }
+    100%{
+        top: 10%;
+        height: 40px;
     }
 }
