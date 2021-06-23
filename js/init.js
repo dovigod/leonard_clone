@@ -2,18 +2,28 @@ const body = document.getElementById('body');
 const letters = document.getElementsByClassName("letter");
 const lastPath = document.getElementsByClassName('last_path')[0];
 const logo = document.getElementsByTagName('svg')[0];
+const nav = document.getElementsByClassName('navigation')[0];
 
 
 
 
+
+const loadTitle = () =>{
+    const titleContainer = document.getElementsByClassName('title_container')[0];
+    titleContainer.style.opacity = 1;
+    titleContainer.getElementsByClassName('upper-title')[0].classList.add('titleLoaderUp');
+    titleContainer.getElementsByClassName('lower-title')[0].classList.add('titleLoaderLow');
+    nav.style.opacity = 1;
+
+}
 const finalOpening = e =>{
     logo.classList.add('logoUp');
     const newScript = document.createElement('script');
     newScript.src = './js/background.js';
     newScript.type ='text/javascript';
     newScript.charset ='utf-8';	
-    
     document.getElementById('body').appendChild(newScript);
+    setTimeout(loadTitle,1000);
     
 }
 
@@ -25,6 +35,8 @@ const turnLogo = e =>{
        // paths[i].style.opacity = 1;
         //finalOpening(1);
     }
+
+
 }
 
 const startOpening = () =>{
@@ -41,7 +53,7 @@ const tasting = () =>{
     for(let i = 0 ; i < ind.length ; i++){
         setTimeout( () => {
             ind[i].style.opacity = 1;
-        } ,400*(i+1))
+        } ,200*(i+1))
     }
 }
 

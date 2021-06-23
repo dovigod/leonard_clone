@@ -2,8 +2,6 @@ onmessage = (e) =>{
 
     const canvas = e.data.canvas;
 
-    console.dir(e);
-
     const ctx = canvas.getContext('2d');
 
    
@@ -33,7 +31,7 @@ onmessage = (e) =>{
 
             ctx.beginPath();
           //  ctx.strokeStyle ='black';
-            ctx.fillStyle = 'peru';
+            ctx.fillStyle = '#C84B31';
             ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
             //ctx.stroke();
             ctx.fill();
@@ -46,7 +44,6 @@ onmessage = (e) =>{
             }else{
                 this.degree += 0.25;
             }
-            console.log(this.degree)
             this.triDeg = this.degree * Math.PI / 180;
             this.x = this.moveTrace * Math.cos(this.triDeg) + this.width/2;
             this.y = (this.moveTrace-250) * Math.sin(this.triDeg) + this.height/2;
