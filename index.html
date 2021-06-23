@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Quicksand:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
     <title>leonard</title>
 </head>
+
+
 <body id='body'>
 
     <canvas id="canvas"></canvas>
@@ -63,7 +65,7 @@
     <nav class="navigation">
         <div class="menu">
             <div class="menuColoring"></div>
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" id="menu_bars"></i>
         </div>
         
         <div class='case_container'>
@@ -79,7 +81,48 @@
     </div>
 
 
-    <script src ="./js/eventListeners.js"></script>    
+
+
+    <footer class="footer">
+        <div class="footer_child footer_left_container">
+            <h5 class="footer_left_message f_message">
+                Why an inventive agency?
+            </h5>
+            <div class="footer_underline">
+            </div>
+        </div>
+        <div class="footer_child ball_container">
+            <div class="ball"></div>
+        </div>
+
+
+        <div class="footer_child footer_right_container">
+            <h5 class="footer_right_message f_message">
+                Why not a inventive agency?
+            </h5>
+            <div class="footer_underline">
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <div class="cookie_container">
+        <span class="term_description">If you continue to browse this website, you are allowing all third-party services.</span>
+        <div class="customize_container">
+            <h5 class="customize">Customize</h5>
+            <div class="customize_underline"></div>
+        </div>
+
+        <div class="acceptance">
+            <i id ="check_term" class="fas fa-check"></i>
+            <span class="accept">Accept all</span>
+        </div>
+    </div>
+
+    <script src ="./js/eventListeners.js"></script>
+    <script src="./js/mousemovement.js"></script>
     <script src="./js/init.js"></script>    
 </body>
 </html>

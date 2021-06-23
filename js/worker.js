@@ -19,8 +19,11 @@ onmessage = (e) =>{
             this.mx = 0;
             this.moveTrace = 750;
             this.triDeg = this.degree * Math.PI / 180;
+            this.triDegp = (this.degree + 180) * Math.PI / 180;
             this.x = this.radius * Math.cos(this.triDeg);
             this.y = this.radius * Math.sin(this.triDeg);
+            this.xp = this.radius * Math.cos(this.triDegp);
+            this.yp = this.radius * Math.cos(this.triDegp);
             
 
             this.animate();
@@ -35,6 +38,16 @@ onmessage = (e) =>{
             ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
             //ctx.stroke();
             ctx.fill();
+
+            ctx.closePath();
+
+            ctx.beginPath();
+
+            ctx.fillStyle = 'skyblue';
+            ctx.arc(this.xp , this.yp , this.radius,0 , 2*Math.PI);
+
+            ctx.fill();
+            ctx.closePath();
         }
 
         update(){
@@ -47,6 +60,10 @@ onmessage = (e) =>{
             this.triDeg = this.degree * Math.PI / 180;
             this.x = this.moveTrace * Math.cos(this.triDeg) + this.width/2;
             this.y = (this.moveTrace-250) * Math.sin(this.triDeg) + this.height/2;
+
+            this.triDegp = (this.degree+180) * Math.PI / 180;
+            this.xp = this.moveTrace * Math.cos(this.triDegp) + this.width/2;
+            this.yp = (this.moveTrace-250) * Math.sin(this.triDegp) + this.height/2;
         }
 
 

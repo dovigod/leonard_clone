@@ -188,13 +188,12 @@ body{
 }
 
 
-i{
+#menu_bars{
     position: relative;
     color: white;
     top: calc( 50% - 15px);
     left: calc( 50% - 15px);
     font-size: 30px;
-    font-weight: 300;
     mix-blend-mode: difference;
     
 }
@@ -256,6 +255,125 @@ i{
      
         background-color: azure;
     }
+}
+
+.cookie_container{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #EDEDED;
+    color: #DA0037;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.term_description{
+    color: inherit;
+    margin-right: 60px;
+    font-size: 20px;
+    font-weight: 200;
+}
+.fa-check{
+    color: inherit;
+}
+
+.customize_container{
+    color:inherit;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.customize{
+    color: inherit;
+    font-size: 20px;
+    font-weight: 200;
+}
+.customize_underline{
+    border: 1px solid #DA0037;
+    margin-top: 3px;
+    width: 100%;
+}
+.acceptance{
+    color: inherit;
+    margin-left: 20px;
+    border: 1px solid #DA0037;
+    border-radius: 20px;
+    padding: 5px 7px;
+    transition: all 0.5s ease;
+}
+.accept{
+    color: inherit;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.acceptance:hover{
+    color: #EDEDED;
+    background-color: #DA0037;
+    border-color: #EDEDED;
+}
 
 
+.footer{
+    position: absolute;
+    width: 800px;
+    right: calc(50% - 400px);
+    display: flex;
+    bottom: 10%;
+    justify-content: center;
+    height: 200px;
+}
+
+.footer_child{
+    height: 100%;
+}
+
+.ball_container{
+    width:25%;
+    position: relative;
+}
+
+.ball{
+    border: 1px solid #EDEDED;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+
+}
+
+
+.footer_left_container{
+    display: flex;
+    font-size: 20px;
+    font-weight: 400;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.footer_right_container{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer_underline{
+    border: 1px solid #EDEDED;
+    mix-blend-mode: difference;
+    width: 100%;
+}
+
+.f_message{
+    mix-blend-mode: difference;
+    margin-bottom: 4px;
 }
