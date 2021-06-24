@@ -3,7 +3,7 @@ const letters = document.getElementsByClassName("letter");
 const lastPath = document.getElementsByClassName('last_path')[0];
 const logo = document.getElementsByTagName('svg')[0];
 const nav = document.getElementsByClassName('navigation')[0];
-
+const foote = document.getElementsByClassName('footer')[0];
 
 
 
@@ -57,6 +57,30 @@ const tasting = () =>{
     }
 }
 
+
+const ballActive = e =>{
+
+    const titles= body.getElementsByClassName('title');
+
+    titles[0].style.opacity =1;
+    titles[0].style.top = '15%';
+
+    titles[1].style.opacity = 1;
+    titles[1].style.top = '40%';
+
+    titles[0].classList.remove('titleLoaderUp');
+    titles[1].classList.remove('titleLoaderLow');
+
+    foote.classList.add('fadeIN');
+    const newScript = document.createElement('script');
+    newScript.src = './js/mousemovement.js';
+    newScript.type ='text/javascript';
+    newScript.charset ='utf-8';	
+    document.getElementById('body').appendChild(newScript);
+    
+
+
+}
 window.onload = () =>{
     //setTimeout(1000 , startOpening);
 
@@ -65,6 +89,6 @@ window.onload = () =>{
     setTimeout(startOpening , 2000);
    
     lastPath.addEventListener('animationend' , finalOpening);
-    
+    body.getElementsByClassName('lower-title')[0].addEventListener('animationend' , ballActive);   
 }
 

@@ -1,6 +1,6 @@
 body{
   
-    height: 100vh;
+    height: 105vh;
     position: relative;
     background-color: black;
 }
@@ -108,6 +108,7 @@ body{
     transition: all 1s ease-in-out;
     top: calc(50% - 160px);
     opacity: 0;
+    backface-visibility: visible;
 }
 
 .title{
@@ -117,7 +118,7 @@ body{
     font-weight: 300;
     width: 800px;
     text-align: center;
-
+    transition: all 0.4s ease-in;
 
 
 }
@@ -326,6 +327,7 @@ body{
     bottom: 10%;
     justify-content: center;
     height: 200px;
+    opacity: 0;
 }
 
 .footer_child{
@@ -344,6 +346,7 @@ body{
     border-radius: 50px;
     position: absolute;
     top: calc(50% - 25px);
+    transition: all 0.3s ease-out;
     left: calc(50% - 25px);
 
 }
@@ -356,6 +359,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+
 }
 
 .footer_right_container{
@@ -371,9 +375,28 @@ body{
     border: 1px solid #EDEDED;
     mix-blend-mode: difference;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 .f_message{
+    color: #EDEDED;
     mix-blend-mode: difference;
     margin-bottom: 4px;
+    transition: all 0.3s ease;
+    z-index: 30;
+}
+
+
+.fadeIN{
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
 }
